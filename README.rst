@@ -1,3 +1,5 @@
+Student Manager
+
 Sample Module Repository
 ========================
 

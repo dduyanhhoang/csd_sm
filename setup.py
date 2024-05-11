@@ -14,11 +14,11 @@ with open('LICENSE') as f:
 setup(
     name='sample',
     version='0.1.0',
-    description='Sample package for Python-Guide.org',
+    description='Student manager - SUM2024 CSD203 Lab 1 ',
     long_description=readme,
-    author='Kenneth Reitz',
-    author_email='me@kennethreitz.com',
-    url='https://github.com/kennethreitz/samplemod',
+    author='Hoang Dinh Duy Anh',
+    author_email='dduyanhhoang@gmail.cm',
+    url='https://github.com/dduyanhhoang',
     license=license,
     packages=find_packages(exclude=('tests', 'docs'))
 )
