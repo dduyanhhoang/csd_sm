@@ -1,8 +1,8 @@
 class Student:
     def __init__(self, code, name):
-        self._code = code
-        self._name = name
-        self._marks = 0
+        self.code = code
+        self.name = name
+        self.marks = 0
 
     @property
     def code(self):
@@ -10,6 +10,10 @@ class Student:
     
     @code.setter
     def code(self, value):
+        if not value:
+            raise ValueError('Student\'s code cannot be empty')
+
+        # More student code validations go here
         self._code = value
     
     @property
@@ -18,6 +22,8 @@ class Student:
     
     @name.setter
     def name(self, value):
+        if not value:
+            raise ValueError('Student\'s name cannot be empty')
         self._name = value
 
     @property
@@ -26,16 +32,21 @@ class Student:
     
     @marks.setter
     def marks(self, value: int):
-        if value > 10 or value < 0:
+        if not (0 <= value <= 10):
             raise ValueError("Marks must be between 0 and 10")
         self._marks = value
 
     def __str__(self):
-        return f"{self._code} - {self._name} - {self._marks}"
-    
+        return f"{self.code} - {self.name} - {self.marks}"
+
     def input(self):
-        self._name = input("Enter student new name: ")
-        self._marks = float(input("Enter student new mark: "))
+        self.name = input("Enter student\'s name: ")
+        while True:
+            try:
+                self.marks = float(input("Enter student\'s marks: "))
+                break
+            except ValueError as e:
+                print(e)
 
     def output(self):
-        print(self.__str__() + "\n")
+        print(self.__str__())
